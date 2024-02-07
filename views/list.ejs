@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LIST</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    .bcontent {
+      margin-top: 30px;
+    }
+
+    .card-header {
+      text-align: center;
+      background-color: #b1e4b3;
+      border-color: black;
+    }
+
+
+    .alignCenter {
+      text-align: center;
+    }
+
+    .alignleft {
+      text-align: left;
+    }
+
+    .alignright {
+      text-align: right;
+      margin-right: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container bcontent">
+
+    <div class="card">
+      <div class="card-header alignCenter">
+        <h3><b>RESULT MANAGEMENT SYSTEM</b></h3>
+        <p class="alignright"><b>Welcome! </b>&nbsp;
+          <button> <a href="/logout">Logout</a></button>
+        </p>
+      </div>
+      <div class="card-body">
+
+        <div class=" alignright">
+          <a href="/add" class="btn btn-primary">ADD RECORD</a>
+        </div>
+
+        <br>
+
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ROLL NO.</th>
+                <th>NAME</th>
+                <th>DATE OF BIRTH</th>
+                <th>SCORE</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.forEach(function(student){ %>
+                <tr>
+                  <td>
+                    <%= student.Roll_No %>
+                  </td>
+                  <td>
+                    <%= student.Name %>
+                  </td>
+                  <td>
+                    <%= student.Date_of_Birth %>
+                  </td>
+                  <td>
+                    <%= student.Score %>
+                  </td>
+                  <td> <a href="/edit/<%= student.Roll_No %>" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="/delete/<%= student.Roll_No %>" class="btn btn-sm btn-danger">Delete</a>
+                  </td>
+                </tr>
+                <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

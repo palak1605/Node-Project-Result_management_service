@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SHOW RESULT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .bcontent {
+            margin-top: 30px;
+        }
+
+        .card-header {
+            text-align: center;
+            background-color: #81f1ac;
+            border-color: black;
+        }
+
+        .btn1 {
+            margin-left: 150px;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .btn2 {
+            margin-bottom: 10px;
+        }
+
+
+        h5 {
+            text-align: center;
+        }
+
+        .alignleft {
+            text-align: center;
+
+
+        }
+
+        .alignright {
+            text-align: right;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bcontent">
+
+        <div class="card">
+            <div class="card-header alignleft">
+                <h3><b>RESULT MANAGEMENT SYSTEM</b></h3>
+                <p class="alignright">
+                    <button> <a href="/logout">Home</a></button>
+                </p>
+            </div>
+            <div class="card-body">
+                <a href="/find"><b>Back</b></a>
+                <h5><b>RESULT</b></h5>
+                <br>
+                <form action="user-login" method="post" class="form">
+
+
+                    <div class="row mb-3">
+                        <label class="required  col-sm-2 col-form-label ">ROLL NO.:</label>
+                        <div class="col-sm-10">
+                            <p>
+                                <%= data.Roll_No %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="required  col-sm-2 col-form-label ">NAME:</label>
+                        <div class="col-sm-10">
+                            <p>
+                                <%= data.Name %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="required  col-sm-2 col-form-label ">DATE OF BIRTH:</label>
+                        <div class="col-sm-10">
+                            <p>
+                                <%= data.Date_of_Birth %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="required  col-sm-2 col-form-label ">SCORE:</label>
+                        <div class="col-sm-10">
+                            <p>
+                                <%= data.Score %>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
